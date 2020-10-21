@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd" >
+
+<tiles-definitions>
+  <definition name="baseLayout" template="/WEB-INF/config/tiles/baseLayout.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="header" value="/WEB-INF/config/tiles/header.jsp"/>
+      <put-attribute name="menu" value="/Jsp/Menu.jsp"/>
+      <put-attribute name="body"   value="/WEB-INF/config/tiles/body.jsp"/>
+  </definition>
+  
+  <definition name="loginLayout" template="/WEB-INF/config/tiles/loginLayout.jsp">
+      <put-attribute name="title"  value="Template"/>
+      <put-attribute name="header" value="/WEB-INF/config/tiles/header.jsp"/>
+      <put-attribute name="body"   value="/WEB-INF/config/tiles/body.jsp"/>
+  </definition>
+  
+  <!--  -->
+  <definition name="initViewLogin" extends="loginLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/usuarios/Login.jsp"/>      
+  </definition>
+  <definition name="initViewCambioContrasenia" extends="loginLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/usuarios/CambioContrasenia.jsp"/>      
+  </definition>
+  <definition name="viewLoginSuccess" extends="loginLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/usuarios/Success.jsp"/>      
+  </definition>
+  <definition name="viewLoginFail" extends="loginLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/usuarios/Fail.jsp"/>      
+  </definition>
+  
+    
+  
+  <!-- Pantalle de bienvenida -->
+  <definition name="welcome" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/Bienvenida.jsp"/>      
+  </definition>
+  
+  
+    <!-- Solicitudes -->
+   <definition name="viewSolicitudCancelacionOferente" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/solicitud/solicitudCancelacion.jsp"/>      
+  </definition>
+  
+     <definition name="viewSolicitudOferenteExtraccion" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/solicitud/solicitudExtraccion.jsp"/>      
+  </definition>
+  
+     <definition name="viewSolicitudModificacionOferente" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/solicitud/solicitudModificacion.jsp"/>      
+  </definition>
+  
+     <definition name="viewSolicitudOferenteDeclinacion" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/solicitud/solicitudDeclinacion.jsp"/>      
+  </definition>
+  
+    
+    <!-- Consulta Solicitud oferentes -->
+   <definition name="viewReporteSolicitudOferente" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultasSolicitud/consultaSolicitud.jsp"/>      
+  </definition>
+  
+  
+    <definition name="detalleSolicitud" extends="baseLayout">
+      <put-attribute name="title"  value="Detalle empresa"/>
+      <put-attribute name="menuCobertura"  value=""/>
+      <put-attribute name="body"   value="/WEB-INF/jsp/rechazoAceptacionOferentes/DetalleSolicitud.jsp"/>     
+    </definition>
+  
+     <!-- Consulta RechazoAceptacion oferentes -->
+   <definition name="viewReporteRechazoAceptacionSolicitudOferente" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultasSolicitud/consultaRechazoAceptacionSolicitud.jsp"/>      
+  </definition>
+  
+  <definition name="viewCatalogosSuccess" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/catalogos/Success.jsp"/>      
+  </definition>
+  <definition name="viewCatalogosFail" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/catalogos/Fail.jsp"/>      
+  </definition>
+  
+  <!-- Catalogos -->
+   <definition name="viewInitCargaCatalogos" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/catalogos/cargarCatalogos.jsp"/>      
+  </definition>
+  <definition name="viewCatalogosSuccess" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/catalogos/Success.jsp"/>      
+  </definition>
+  <definition name="viewCatalogosFail" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/catalogos/Fail.jsp"/>      
+  </definition>
+  
+  <!-- Consulta -->
+  <!-- Unidades de valuación, peritos y controladores (UPC) -->
+  <definition name="initViewConsultaUPC" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/UnidadPeritosControladores/ConsultaUPC_Parametros.jsp"/>      
+  </definition>
+  <definition name="viewConsultaUPC" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/UnidadPeritosControladores/ConsultaUPC_Campos.jsp"/>      
+  </definition>
+   <definition name="viewResultadoConsultaUPC" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/UnidadPeritosControladores/ConsultaUPC_Resultado.jsp"/>      
+  </definition>
+  
+  <!-- Asignaciones -->
+  <definition name="initViewConsultaA" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Asignaciones/ConsultaAsignaciones_Parametros.jsp"/>      
+  </definition>
+  <definition name="viewConsultaA" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Asignaciones/ConsultaAsignaciones_Campos.jsp"/>      
+  </definition>
+  <definition name="viewResultadoConsultaA" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Asignaciones/ConsultaAsignaciones_Resultado.jsp"/>      
+  </definition>
+
+   <!-- Cancelaciones -->
+  <definition name="initViewConsultaC" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Cancelaciones/ConsultaCancelaciones_Parametros.jsp"/>      
+  </definition>
+  <definition name="viewConsultaC" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Cancelaciones/ConsultaCancelaciones_Campos.jsp"/>      
+  </definition>
+  <definition name="viewResultadoConsultaC" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Cancelaciones/ConsultaCancelaciones_Resultado.jsp"/>      
+  </definition>
+  
+  
+   <!-- Avaluos -->
+  <definition name="viewInitConsultaAvaluos" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Avaluos/ConsultaAvaluos_Parametros.jsp"/>      
+  </definition>
+  <definition name="viewConsultaAvaluosCampos" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Avaluos/ConsultaAvaluos_Campos.jsp"/>      
+  </definition>
+  <definition name="viewResultadoConsultaAvaluos" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Avaluos/ConsultaAvaluos_Resultado.jsp"/>      
+  </definition>
+  
+  <!-- Avaluos -->
+  <definition name="viewInitConsultaSanciones" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Sanciones/ConsultaSanciones_Parametros.jsp"/>      
+  </definition>
+  <definition name="viewConsultaSancionesCampos" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Sanciones/ConsultaSanciones_Campos.jsp"/>      
+  </definition>
+  <definition name="viewResultadoSancionesAvaluos" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultas/Sanciones/ConsultaSanciones_Resultado.jsp"/>      
+  </definition>
+  
+  
+  
+  
+  
+  
+    <!-- Ecotecnologia -->
+   <definition name="viewReporteEcoTecnologia" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/ecotecnologia/consultaEcotecnologia.jsp"/>      
+  </definition>
+  
+    <!-- Oferente Ejemplo -->
+   <definition name="viewReporteOerenteEjm" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultasOfeEjem/ConsultaOferenteEjm.jsp"/>      
+  </definition>
+  
+     <definition name="viewReporteOerenteEjm2" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/consultasOfeEjem/ConsultaOferenteEjmVer2.jsp"/>      
+  </definition>
+  
+  <!-- Reporte Inex - Cancelaciones -->
+  <definition name="initViewConsultaCancelacionInex" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/inex/cancelaciones/ConsultaCancelaciones_Parametros.jsp"/>      
+  </definition>
+  <definition name="initViewConsultaCancelacionInexParametros" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/inex/cancelaciones/ConsultaCancelaciones_Campos.jsp"/>      
+  </definition>
+  <definition name="viewResultadoConsultaCancelacionInex" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/inex/cancelaciones/ConsultaCancelaciones_Resultado.jsp"/>      
+  </definition>
+  
+   <!-- Reporte Inex - Cancelaciones -->
+  <definition name="initViewConsultaReasignacionInex" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/inex/reasignaciones/ConsultaReasignacion_Parametros.jsp"/>      
+  </definition>
+  <definition name="initViewConsultaReasignacionInexParametros" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/inex/reasignaciones/ConsultaReasignacion_Campos.jsp"/>      
+  </definition>
+  <definition name="viewResultadoConsultaReasignacionInex" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/inex/reasignaciones/ConsultaReasignacion_Resultado.jsp"/>      
+  </definition>
+  
+
+  <!-- Success -->
+  <definition name="viewSuccess" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/Success.jsp"/>      
+  </definition>
+  
+  <definition name="viewFail" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/Fail.jsp"/>      
+  </definition>
+  
+    <definition name="viewConsultaVaciaFail" extends="baseLayout">
+      <put-attribute name="title"  value="I N F O N A V I T - Solicitud de Oferentes"/>
+      <put-attribute name="body"   value="/Jsp/ConsultaVacia.jsp"/>      
+  </definition>
+  
+  
+
+  
+ 
+</tiles-definitions>
+  

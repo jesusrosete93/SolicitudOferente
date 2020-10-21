@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app id="WebApp_ID" version="2.5" 
+		 xmlns="http://java.sun.com/xml/ns/javaee" 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+		 					 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" metadata-complete="true">
+	<display-name>SolicitudOferenteWeb</display-name>
+	<listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	<listener>
+		<display-name>Inicializador</display-name>
+		<icon>
+			<small-icon>small.gif</small-icon>
+			<large-icon>large.gif</large-icon>
+		</icon>
+		<listener-class>mx.org.infonavit.solicitud.oferente.utils.ApplicationInit</listener-class>
+	</listener>
+	<context-param>
+		<param-name>CONSTANTES_SETTINGS</param-name>
+		<param-value>/WEB-INF/config/constantes/constantes.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jConfiguration</param-name>
+		<param-value>/WEB-INF/config/logging/Log4j.cfg.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>appContextConfig</param-name>
+		<param-value>/WEB-INF/config/app/application-context.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>PATH_LOG</param-name>
+		<param-value>/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/logs/ServerCTV/tablero.log</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+				/WEB-INF/config/app/application-context.xml
+				/WEB-INF/config/app/security-context.xml
+		</param-value>
+	</context-param>
+	 <servlet>
+		<servlet-name>solicitud</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+		    <param-name>contextConfigLocation</param-name>
+		    <param-value>/WEB-INF/config/app/reportes-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>solicitud</servlet-name>
+		<url-pattern>*.htm </url-pattern>
+		<url-pattern>*.json</url-pattern>
+	</servlet-mapping> 
+	<servlet>
+		<description>Archivo de propiedades para los registros permitidos</description>
+		<servlet-name>PropertiesAction</servlet-name>
+		<servlet-class>mx.org.infonavit.solicitud.oferente.controllers.PropertiesController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PropertiesAction</servlet-name><url-pattern>/properties4ct1on</url-pattern>
+	</servlet-mapping>
+	<filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+    <filter-mapping>
+      <filter-name>springSecurityFilterChain</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+   	  
+	<welcome-file-list>
+		<welcome-file>login.htm</welcome-file>
+	</welcome-file-list>
+	
+	
+	
+	
+	<servlet>
+		<description>
+			This is the description for the sample servlet
+		</description>
+		<display-name>Sample display name</display-name>
+		<icon>
+			<small-icon>icons/small.gif</small-icon>
+			<large-icon>icons/small.gif</large-icon>
+		</icon>
+		<servlet-name>urlSettings</servlet-name>
+		<servlet-class>mx.org.infonavit.solicitud.oferente.controllers.UrlSettingsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>urlSettings</servlet-name><url-pattern>/url4ct1on</url-pattern>
+	</servlet-mapping></web-app>
+	

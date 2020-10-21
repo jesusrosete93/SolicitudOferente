@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+						    http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context.xsd
+							http://www.springframework.org/schema/mvc
+			    			http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+			    			
+	    
+			    			
+		<!-- Configures the annotation-driven Spring MVC Controller programming model.
+				Note that, with Spring 3.0, this tag works in Servlet MVC only!  -->
+		<mvc:annotation-driven /> 
+			
+		<!-- Scans the classpath for annotated components that will be auto-registered as Spring beans.
+		 For example @Controller and @Service. Make sure to set the correct base-package-->
+		<context:component-scan base-package="mx.org.infonavit.solicitud.oferente.controllers" />
+		
+		
+		 	
+		<mvc:interceptors>
+		    <bean id="webContentInterceptor" 
+		          class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+		        <property name="cacheSeconds" value="0"/>
+		        <property name="useExpiresHeader" value="true"/>
+		        <property name="useCacheControlHeader" value="true"/>
+		        <property name="useCacheControlNoStore" value="true"/>
+		    </bean>
+		</mvc:interceptors>
+ 			
+ 			<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+  					<property name="mediaTypes">
+    				<map>
+      					<entry key="html" value="text/html"/>
+      					<entry key="json" value="application/json"/>
+    				</map>
+  					</property>
+  			</bean>
+ 			
+ 		   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		        <property name="maxUploadSize" value="99999999999"/>
+		   </bean> 
+		    
+		 
+		    
+		    <!-- Esta linea previene que se muestre contenido seguro al oprimir el boton de: "Regresar" una vez que se ha salido del aplicativo -->
+		    <!-- 
+		    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    					<property name="cacheSeconds" value="0" />
+			</bean>
+		     -->
+		   <!--Define FlowHandlerMapping to tell DispatcherServlet (in web.xml)
+			to send flow requests to Spring Web Flow
+		   <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+				<property name="flowRegistry" ref="consultaUVFlowRegistry" />
+		   </bean>
+		    -->
+		   <!-- Define FlowHandlerAdapter to handle Spring Web Flow request call.
+			This is the Controller class in Spring Web Flow 
+		   <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+			  <property name="flowExecutor" ref="consultaUVFlowExecutor" />
+		   </bean>-->
+		   
+		    
+		   <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		       <property name="definitions">
+		         <list>
+		            <value>/WEB-INF/config/tiles/tiles-def.xml</value> 
+		         </list>
+		       </property>
+		   </bean>
+		   <bean id="viewResolver" 
+		          class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		       <property name="viewClass" 
+		                 value="org.springframework.web.servlet.view.tiles2.TilesView" />
+		   </bean>
+		    
+		    
+		   <!-- Message bundles --> 
+		   <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+				<property name="basename">
+					<value>/WEB-INF/config/resources/messages</value>
+				</property>
+		   </bean>
+		   
+		   
+			
+		   
+</beans>
+
